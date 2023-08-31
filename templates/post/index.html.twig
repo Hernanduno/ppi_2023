@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+	<div class="example-wrapper">
+		{% if postForm is defined %}
+			{{form(postForm)}}{% endif %}
+		{% if createdMessage is defined and createdMessage|length > 0 %}
+			<h2>{{createdMessage}}<h2>		
+		{% endif %}
+		{% if updatedMessage is defined and updatedMessage|length > 0 %}
+			<h2>{{updatedMessage}}<h2>		
+		{% endif %}		
+	</div>
+    <div class="example-wrapper">
+	{% if postInfo is defined %}
+		{{dump(postInfo)}}{% endif %}
+	</div>
+	<div class="example-wrapper">
+		{% if deletedMenssage is defined %}
+		<h2>{{deletedMenssage}}<h2>		
+		{% endif %}
+	</div>
+{% endblock %}
